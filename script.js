@@ -54,16 +54,20 @@
 })();
 */
 const messages = [
-    "Are you sure?",
-    "Really sure??",
-    "Are you positive?",
-    "Pookie please...",
-    "Just think about it!",
-    "If you say no, I will be really sad...",
-    "I will be very sad...",
-    "I will be very very very sad...",
-    "Ok fine, I will stop asking...",
-    "Just kidding, say yes please! ❤️"
+    "Pensa bem...",
+    "Tem certeza?",
+    "Não me faça ficar triste...",
+    "Por favor, diga sim!",
+    "Não seja tão cruel comigo!",
+    "Se disser não, vou ficar muito triste...",
+    "Quer me fazer chorar? :(",
+    "Você está partindo o meu coração...",
+    "Tudo bem, posso conviver com toda essa dor...",
+    "Estava brincando. Fala sim!❤️"
+];
+
+const sadGifs = [
+    "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3dzdjU5c2doaDd5eHQ5a2Vwam92MjVhNjkxY2d0aWo5NjlndHY2eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7AzEXdIb1wyCTWJntb/giphy.gif"
 ];
 
 let messageIndex = 0;
@@ -71,7 +75,17 @@ let messageIndex = 0;
 function handleNoClick() {
     const noButton = document.querySelector('.no-button');
     const yesButton = document.querySelector('.yes-button');
+    const gif = document.getElementById('maingif');
+    const gifContainer = document.querySelector('.gif_container');
+    
     noButton.textContent = messages[messageIndex];
+    
+    if (messageIndex >= 3) {
+        gifContainer.style.width = '100%';
+        gifContainer.style.height = 'auto';
+        gif.src = sadGifs[0];
+    }
+    
     messageIndex = (messageIndex + 1) % messages.length;
     const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
     yesButton.style.fontSize = `${currentSize * 1.5}px`;

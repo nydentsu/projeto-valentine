@@ -2,23 +2,55 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    background-color: #f9e3e3;
+    background-color: #f995e3;
     font-family: 'Arial', sans-serif;
+    padding: 20px;
 }
 
 .container {
     text-align: center;
+    width: 100%;
+    max-width: 600px;
 }
 
 .header_text {
     font-size: 3em;
-    color: #d32f2f;
+    color: #a91d1d;
+    margin: 0;
+    word-wrap: break-word;
 }
 
 .gif_container img {
     width: 100%; 
     max-width: 500px; 
-    height: auto; 
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        max-width: 100%;
+    }
+    
+    .header_text {
+        font-size: 2em;
+    }
+    
+    .gif_container img {
+        max-width: 100%;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .header_text {
+        font-size: 1.5em;
+    }
 }
